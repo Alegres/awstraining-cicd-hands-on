@@ -105,6 +105,8 @@ jobs:
 Please adjust path to the action.
 
 # Datacenter Map
+Remember to adjust **<<ACCOUNT_ID>>** in workflow before execution.
+
 ```yaml
 name: Datacenter map
 
