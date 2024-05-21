@@ -124,6 +124,8 @@ on:
         value: ${{ jobs.datacenterMap.outputs.STAGE }}
       AWS_ACCOUNT:
         value: ${{ jobs.datacenterMap.outputs.AWS_ACCOUNT }}
+      PROFILE:
+        value: ${{ jobs.datacenterMap.outputs.PROFILE }}
       REGION:
         value: ${{ jobs.datacenterMap.outputs.REGION }}
       CLUSTER_NAME:
@@ -139,6 +141,7 @@ jobs:
       HUB: ${{ env.HUB }}
       STAGE: ${{ env.STAGE }}
       AWS_ACCOUNT: ${{ env.AWS_ACCOUNT }}
+      PROFILE: ${{ env.PROFILE }}
       REGION: ${{ env.REGION }}
       CLUSTER_NAME: ${{ env.CLUSTER_NAME }}
       SERVICE_NAME: ${{ env.SERVICE_NAME }}
@@ -152,7 +155,8 @@ jobs:
               "BACKEND_EMEA_TEST": {
                  "HUB": "EMEA",
                  "STAGE": "TEST",
-                 "AWS_ACCOUNT": "<<ACCOUNT_ID>>",
+                 "AWS_ACCOUNT": "467331071075",
+                 "PROFILE": "backend-test",
                  "REGION": "eu-central-1",
                  "CLUSTER_NAME": "backend-ecs-test",
                  "SERVICE_NAME": "backend",
@@ -161,7 +165,8 @@ jobs:
               "BACKEND_US_TEST": {
                  "HUB": "US",
                  "STAGE": "TEST",
-                 "AWS_ACCOUNT": "<<ACCOUNT_ID>>",
+                 "AWS_ACCOUNT": "467331071075",
+                 "PROFILE": "backend-test",
                  "REGION": "us-east-1",
                  "CLUSTER_NAME": "backend-ecs-test",
                  "SERVICE_NAME": "backend",
