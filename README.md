@@ -104,6 +104,70 @@ jobs:
 
 Please adjust path to the action.
 
+# Datacenter Map
+```yaml
+name: Datacenter map
+
+on:
+  workflow_call:
+    inputs:
+      hubEnv:
+        required: true
+        type: "string"
+    # Map the workflow outputs to job outputs
+    outputs:
+      HUB:
+        value: ${{ jobs.datacenterMap.outputs.HUB }}
+      STAGE:
+        value: ${{ jobs.datacenterMap.outputs.STAGE }}
+      AWS_ACCOUNT:
+        value: ${{ jobs.datacenterMap.outputs.AWS_ACCOUNT }}
+      REGION:
+        value: ${{ jobs.datacenterMap.outputs.REGION }}
+      CLUSTER_NAME:
+        value: ${{ jobs.datacenterMap.outputs.CLUSTER_NAME }}
+      SERVICE_NAME:
+        value: ${{ jobs.datacenterMap.outputs.SERVICE_NAME }}
+      TASK_NAME:
+        value: ${{ jobs.datacenterMap.outputs.TASK_NAME }}
+jobs:
+  datacenterMap:
+    runs-on: ubuntu-latest
+    outputs:
+      HUB: ${{ env.HUB }}
+      STAGE: ${{ env.STAGE }}
+      AWS_ACCOUNT: ${{ env.AWS_ACCOUNT }}
+      REGION: ${{ env.REGION }}
+      CLUSTER_NAME: ${{ env.CLUSTER_NAME }}
+      SERVICE_NAME: ${{ env.SERVICE_NAME }}
+      TASK_NAME: ${{ env.TASK_NAME }}
+    steps:
+      - uses: kanga333/variable-mapper@master
+        with:
+          key: "${{ inputs.hubEnv }}"
+          map: |
+            {
+              "BACKEND_EMEA_TEST": {
+                 "HUB": "EMEA",
+                 "STAGE": "TEST",
+                 "AWS_ACCOUNT": "<<ACCOUNT_ID>>",
+                 "REGION": "eu-central-1",
+                 "CLUSTER_NAME": "backend-ecs-test",
+                 "SERVICE_NAME": "backend",
+                 "TASK_NAME": "backend"
+              },
+              "BACKEND_US_TEST": {
+                 "HUB": "US",
+                 "STAGE": "TEST",
+                 "AWS_ACCOUNT": "<<ACCOUNT_ID>>",
+                 "REGION": "us-east-1",
+                 "CLUSTER_NAME": "backend-ecs-test",
+                 "SERVICE_NAME": "backend",
+                 "TASK_NAME": "backend"
+              }
+            }
+```
+
 # Terraform pipeline
 
 # Multibranch pipeline
