@@ -109,6 +109,8 @@ Please adjust path to the action.
 # Multibranch pipeline
 
 # Test cURLs
+First, grab DNS of Load Balancer from AWS.
+
 Create test measurement
 
 ```bash
