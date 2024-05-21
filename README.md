@@ -3,7 +3,7 @@ This README contains code for all pipelines used in CICD module of AWS Trainings
 
 Please go through presentation slides to get step-by-step instructions on how to configure CICD for a base application.
 Slides can be found under:
-* TODO give link...
+* [Presentation](https://capgemini.sharepoint.com/:b:/s/TrainAWStrainers/EX179OtEeQBJi0-3BbY_RGIBwGWEkmae3TkHLsbfHp5E6g?e=NtkQYv)
 
 # Hello world workflow
 ```yaml
