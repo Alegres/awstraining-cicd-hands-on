@@ -243,6 +243,22 @@ jobs:
 ```
 
 # Multibranch pipeline
+Secrets that have to be set in the AWS Secrets Manager:
+```json
+{
+  "backend": {
+    "security": {
+      "users": [
+        {
+          "username": "userEMEATest",
+          "password": "$2a$10$uKw9ORqCF.qA3p6woHCgmeGW0jFuU9AstYhl61Uw8RTQ5AaZCfuru",
+          "roles": "USER"
+        }
+      ]
+    }
+  }
+}
+```
 
 ```yaml
 name: Multibranch pipeline
