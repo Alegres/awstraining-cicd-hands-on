@@ -103,3 +103,27 @@ jobs:
 ```
 
 Please adjust path to the action.
+
+# Terraform pipeline
+
+# Multibranch pipeline
+
+# Test cURLs
+Create test measurement
+
+```bash
+curl -vk 'http://myapp-lb-564621670.eu-central-1.elb.amazonaws.com/device/v1/test' \
+--header 'Content-Type: application/json' \
+-u testUser:welt \
+--data '{
+    "type": "test",
+    "value": -510.190
+}'
+```
+
+Retrieve mesurements
+
+```bash
+curl -vk http://myapp-lb-564621670.eu-central-1.elb.amazonaws.com/device/v1/test -u testUser:welt
+```
+
