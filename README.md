@@ -1,4 +1,4 @@
-![image](https://github.com/Alegres/awstraining-cicd-hands-on/assets/32520354/b42da60d-08f0-4db2-ab13-0af0156246cc)# Introduction
+# Introduction
 This README contains code for all pipelines used in CICD module of AWS Trainings.
 
 Please go through presentation slides to get step-by-step instructions on how to configure CICD for a base application.
