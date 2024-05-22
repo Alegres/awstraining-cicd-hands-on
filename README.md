@@ -7,10 +7,10 @@ Slides can be found under:
 
 # Preparation
 1. Fork base repository to your account
- * https://github.com/Alegres/awstraining-cicd
+   * https://github.com/Alegres/awstraining-cicd
 2. Go to Settings -> Secrets and variables and setup AWS credentials
- * BACKEND_EMEA_TEST_AWS_KEY
- * BACKEND_EMEA_TEST_AWS_SECRET  
+   * BACKEND_EMEA_TEST_AWS_KEY
+   * BACKEND_EMEA_TEST_AWS_SECRET  
 
 # Hello world workflow
 1. Go to GitHub -> Actions
