@@ -5,6 +5,13 @@ Please go through presentation slides to get step-by-step instructions on how to
 Slides can be found under:
 * [Presentation](https://capgemini.sharepoint.com/:b:/s/TrainAWStrainers/EX179OtEeQBJi0-3BbY_RGIBwGWEkmae3TkHLsbfHp5E6g?e=NtkQYv)
 
+# Preparation
+1. Fork base repository to your account
+  ** https://github.com/Alegres/awstraining-cicd
+2. Go to Settings -> Secrets and variables and setup AWS credentials
+  ** BACKEND_EMEA_TEST_AWS_KEY
+  ** BACKEND_EMEA_TEST_AWS_SECRET  
+
 # Hello world workflow
 1. Go to GitHub -> Actions
 2. Click on "New workflow" and then on "Set up a workflow yourself"
