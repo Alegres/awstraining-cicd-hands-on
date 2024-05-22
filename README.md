@@ -199,6 +199,8 @@ jobs:
 ```
 
 # Provision infrastructure with Terraform pipeline
+1. Create a new workflow for provisioning the AWS infrastructure with Terraform
+
 ```yaml
 name: Provision with Terraform
 run-name: Provision with Terraform
@@ -259,7 +261,8 @@ jobs:
 ```
 
 # Multibranch pipeline
-Secrets that have to be set in the AWS Secrets Manager:
+## Preparation
+First, please set secrets (credentials) in AWS Secrets Manager:
 ```json
 {
   "backend": {
@@ -275,6 +278,11 @@ Secrets that have to be set in the AWS Secrets Manager:
   }
 }
 ```
+
+Then, please set **BACKEND_EMEA_TEST_SMOKETEST_BACKEND_PASSWORD** repository secret to "welt", as this is the password for the above test user, that will be used for smoke tests.
+
+## Pipeline
+1. Create the below pipeline
 
 ```yaml
 name: Multibranch pipeline
@@ -398,8 +406,12 @@ jobs:
           echo "All steps have passed."
 ```
 
+2. Run the pipeline to deploy application to ECS Fargate
+
 # Test cURLs
-First, grab DNS of Load Balancer from AWS.
+1. Go to AWS -> EC2 -> Load Balancers
+2. Grab DNS of your Load Balancer
+3. Execute below cURLs (please adjust URL)
 
 Create test measurement
 
