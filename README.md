@@ -1,4 +1,4 @@
-# Introduction
+![image](https://github.com/Alegres/awstraining-cicd-hands-on/assets/32520354/b42da60d-08f0-4db2-ab13-0af0156246cc)# Introduction
 This README contains code for all pipelines used in CICD module of AWS Trainings.
 
 Please go through presentation slides to get step-by-step instructions on how to configure CICD for a base application.
@@ -8,7 +8,10 @@ Slides can be found under:
 # Preparation
 1. Fork base repository to your account
    * https://github.com/Alegres/awstraining-cicd
-2. Go to Settings -> Secrets and variables and setup AWS credentials
+2. Clone fork to your computer
+3. Replace <<ACCOUNT_ID>> in the whole project with your AWS Account ID
+4. Go to ```aws-infrastructure/terraform/wrapper.properties``` file and set **UNIQUE_BUCKET_STRING** to some unique value that will be used as your Terraform state bucekt name
+5. Go to Settings -> Secrets and variables and setup AWS credentials
    * BACKEND_EMEA_TEST_AWS_KEY
    * BACKEND_EMEA_TEST_AWS_SECRET  
 
