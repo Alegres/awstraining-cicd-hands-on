@@ -8,10 +8,14 @@ Slides can be found under:
 # Preparation
 1. Fork base repository to your account
    * https://github.com/Alegres/awstraining-cicd
-2. Clone fork to your computer
-3. Replace **<<ACCOUNT_ID>>** in the whole project with your AWS Account ID
-4. Go to ```aws-infrastructure/terraform/wrapper.properties``` file and set **UNIQUE_BUCKET_STRING** to some unique value that will be used as your Terraform state bucekt name
-5. Go to Settings -> Secrets and variables and setup AWS credentials
+2. Check if Destroy infrastructure workflow is visible under "Actions" tab
+
+If not, then edit workflow file and just add some dummy commit data to make it visible for GitHub.
+
+3. Clone fork to your computer
+4. Replace **<<ACCOUNT_ID>>** in the whole project with your AWS Account ID
+5. Go to ```aws-infrastructure/terraform/wrapper.properties``` file and set **UNIQUE_BUCKET_STRING** to some unique value that will be used as your Terraform state bucekt name
+6. Go to Settings -> Secrets and variables and setup AWS credentials
    * BACKEND_EMEA_TEST_AWS_KEY
    * BACKEND_EMEA_TEST_AWS_SECRET  
 
