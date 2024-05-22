@@ -6,6 +6,11 @@ Slides can be found under:
 * [Presentation](https://capgemini.sharepoint.com/:b:/s/TrainAWStrainers/EX179OtEeQBJi0-3BbY_RGIBwGWEkmae3TkHLsbfHp5E6g?e=NtkQYv)
 
 # Hello world workflow
+1. Go to GitHub -> Actions
+2. Click on "New workflow" and then on "Set up a workflow yourself"
+3. Set a proper workflow YAML file name
+4. Write workflow code
+
 ```yaml
 name: Hello world
 run-name: Hello ${{ inputs.name }} run
@@ -53,7 +58,12 @@ jobs:
           echo "### Summary: Length of last name is ${{ needs.print_last_name.outputs.last_name_length }}" >> $GITHUB_STEP_SUMMARY
 ```
 
+5. Commit changes
+6. Go to GitHub -> Actions, select new workflow and execute it
+
 # Custom composite action
+1. Create new repository and place the custom composite action code in it
+
 ```yaml
 name: 'Hello World'
 description: 'Greet someone'
@@ -80,6 +90,10 @@ runs:
       run: echo "random-number=$(echo $RANDOM)" >> $GITHUB_OUTPUT
       shell: bash
 ```
+
+2. Grant permissions for outside repositories to execute your custom action
+3. Prepare new release and version tag for your action
+4. In your main repository create a new "Greet workflow" and paste below code
 
 Execution worfklow:
 ```yaml
@@ -109,7 +123,9 @@ jobs:
           echo "Output random number: ${{ steps.greet.outputs.random-number }}"
 ```
 
-Please adjust path to the action.
+Please adjust path to point to your custom action repository.
+
+5. Execute your "Greet workflow"
 
 # Datacenter Map
 Remember to adjust **<<ACCOUNT_ID>>** in workflow before execution.
