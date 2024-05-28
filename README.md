@@ -17,7 +17,9 @@ If not, then edit workflow file and just add some dummy commit data to make it v
 5. Go to ```aws-infrastructure/terraform/wrapper.properties``` file and set **UNIQUE_BUCKET_STRING** to some unique value that will be used as your Terraform state bucekt name
 6. Go to Settings -> Secrets and variables and setup AWS credentials
    * BACKEND_EMEA_TEST_AWS_KEY
-   * BACKEND_EMEA_TEST_AWS_SECRET  
+   * BACKEND_EMEA_TEST_AWS_SECRET
+  
+**REMEMBER!** Push all changes to your forked repository!
 
 # Hello world workflow
 1. Go to GitHub -> Actions
@@ -294,11 +296,13 @@ First, please set secrets (credentials) in AWS Secrets Manager:
 ```
 
 You also need to update task.json and replace **<<TODO: set ARN of secrets manager>>** with ARN of your secrets manager.
+**REMEMBER!** Push all changes to your forked repository!
 
 Then, please set **BACKEND_EMEA_TEST_SMOKETEST_BACKEND_PASSWORD** repository secret to "welt", as this is the password for the above test user, that will be used for smoke tests.
 
 Make sure that you have also:
 * Replaced <<ACCOUNT_ID>> in the whole project (replace all in all files) with your AWS Account ID
+  * **REMEMBER!** Push all changes to your forked repository!
 * Set AWS credentials in GitHub Settings
 
 Go to Settings -> Secrets and variables and setup AWS credentials:
