@@ -302,8 +302,8 @@ Make sure that you have also:
 * Set AWS credentials in GitHub Settings
 
 Go to Settings -> Secrets and variables and setup AWS credentials:
-**BACKEND_EMEA_TEST_AWS_KEY**
-**BACKEND_EMEA_TEST_AWS_SECRET**
+* **BACKEND_EMEA_TEST_AWS_KEY**
+* **BACKEND_EMEA_TEST_AWS_SECRET**
 
 ## Pipeline
 1. Create the below pipeline
