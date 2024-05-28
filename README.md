@@ -1,3 +1,17 @@
+# Content
+- [Content](#content)
+- [Introduction](#introduction)
+- [Preparation](#preparation)
+- [Hello world workflow](#hello-world-workflow)
+- [Custom composite action](#custom-composite-action)
+- [Datacenter Map](#datacenter-map)
+- [Provision infrastructure with Terraform pipeline](#provision-infrastructure-with-terraform-pipeline)
+- [Multibranch pipeline (Build, Test, Deploy to test stage and run smoke tests)](#multibranch-pipeline-build-test-deploy-to-test-stage-and-run-smoke-tests)
+  - [Preparation](#preparation-1)
+  - [Pipeline](#pipeline)
+- [Test cURLs](#test-curls)
+
+
 # Introduction
 This README contains code for all pipelines used in CICD module of AWS Trainings.
 
