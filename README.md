@@ -274,7 +274,7 @@ jobs:
           ./setup_new_region.sh w2.sh ${{ env.AWS_PROFILE }} ${{ env.AWS_REGION }} apply -auto-approve
 ```
 
-# Multibranch pipeline
+# Multibranch pipeline (Build, Test, Deploy to test stage and run smoke tests)
 ## Preparation
 First, please set secrets (credentials) in AWS Secrets Manager:
 ```json
