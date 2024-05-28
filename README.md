@@ -297,6 +297,14 @@ You also need to update task.json and replace **<<TODO: set ARN of secrets manag
 
 Then, please set **BACKEND_EMEA_TEST_SMOKETEST_BACKEND_PASSWORD** repository secret to "welt", as this is the password for the above test user, that will be used for smoke tests.
 
+Make sure that you have also:
+* Replaced <<ACCOUNT_ID>> in the whole project (replace all in all files) with your AWS Account ID
+* Set AWS credentials in GitHub Settings
+
+Go to Settings -> Secrets and variables and setup AWS credentials:
+**BACKEND_EMEA_TEST_AWS_KEY**
+**BACKEND_EMEA_TEST_AWS_SECRET**
+
 ## Pipeline
 1. Create the below pipeline
 
