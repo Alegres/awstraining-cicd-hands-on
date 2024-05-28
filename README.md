@@ -32,6 +32,7 @@ If not, then edit workflow file and just add some dummy commit data to make it v
 6. Go to Settings -> Secrets and variables and setup AWS credentials
    * BACKEND_EMEA_TEST_AWS_KEY
    * BACKEND_EMEA_TEST_AWS_SECRET
+   * BACKEND_EMEA_TEST_SMOKETEST_BACKEND_PASSWORD to "welt"
   
 **REMEMBER!** Push all changes to your forked repository!
 
@@ -312,7 +313,7 @@ First, please set secrets (credentials) in AWS Secrets Manager:
 You also need to update task.json and replace **<<TODO: set ARN of secrets manager>>** with ARN of your secrets manager.
 **REMEMBER!** Push all changes to your forked repository!
 
-Then, please set **BACKEND_EMEA_TEST_SMOKETEST_BACKEND_PASSWORD** repository secret to "welt", as this is the password for the above test user, that will be used for smoke tests.
+Then, please make sure that **BACKEND_EMEA_TEST_SMOKETEST_BACKEND_PASSWORD** repository secret is set to "welt", as this is the password for the above test user, that will be used for smoke tests.
 
 Make sure that you have also:
 * Replaced <<ACCOUNT_ID>> in the whole project (replace all in all files) with your AWS Account ID
