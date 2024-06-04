@@ -260,8 +260,8 @@ jobs:
     env:
       AWS_ACCOUNT: ${{ needs.properties.outputs.AWS_ACCOUNT }}
       AWS_PROFILE: ${{ needs.properties.outputs.PROFILE }}
-      AWS_KEY:  ${{ secrets.BACKEND_EMEA_TEST_AWS_KEY }}
-      AWS_SECRET: ${{ secrets.BACKEND_EMEA_TEST_AWS_SECRET }}
+      AWS_KEY: ${{ secrets[format('{0}_AWS_KEY', inputs.hubEnv)] }}
+      AWS_SECRET: ${{ secrets[format('{0}_AWS_SECRET', inputs.hubEnv)] }}
       AWS_REGION: ${{ needs.properties.outputs.REGION }}
 
     steps:
@@ -384,25 +384,6 @@ jobs:
         with:
           maven-version: 3.8.2
 
-      - name: Cache local Maven repository
-        uses: actions/cache@v3
-        with:
-          path: ~/.m2/repository
-          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-          restore-keys: |
-            ${{ runner.os }}-maven-
-      # Extract branch name from GITHUB_REF environment variable, which be default is in the format "refs/heads/<branch-name>"
-      # e.g. extracts refs/heads/<branch-name> -> <branch-name>
-      - name: Extract branch name
-        if: ${{ env.SKIP_SONAR == 'false' && !github.base_ref }}
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch
-        
-      - name: Display built branch in summary
-        if: always()
-        run: |
-          echo "### Built branch ${{ steps.extract_branch.outputs.branch }}" >> $GITHUB_STEP_SUMMARY
-          
       - name: Build
         run: mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package org.jacoco:jacoco-maven-plugin:report
 
@@ -427,7 +408,7 @@ jobs:
           docker tag backend:latest $ECR_REGISTRY/$ECR_REPOSITORY:latest
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:${GITHUB_REF##*/}
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
-      # deploy:
+
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
@@ -440,6 +421,7 @@ jobs:
         if: ${{ env.SKIP_SMOKE_TESTS == 'false' }}
         run: |
           mvn -f pom.xml clean test -P st,BACKEND_EMEA_TEST
+
   pipelinePassed:
     runs-on: ubuntu-latest
     needs: buildTestDeploy
